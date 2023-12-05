@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     var currentDrawType = 0
+    let someE = "🐞"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
-        if currentDrawType > 6 {
+        if currentDrawType > 7 {
             currentDrawType = 0
         }
         switch currentDrawType {
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
         case 5:
             drawImagesAndText()
         case 6:
+            drawLadyBug()
+        case 7:
             drawMoreRotatedSquares()
         default:
             break
@@ -174,6 +177,115 @@ class ViewController: UIViewController {
         }
         imageView.image = image
     }
-    
+    func drawLadyBug() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            //awesome drawing code there
+            
+            var rectangle = CGRect(x: 208, y: 32, width: 128, height: 128).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 164, y: 32, width: 128, height: 128).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+           
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 128, y: 64, width: 256, height: 384).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 178, y: 114, width: 48, height: 48).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 282, y: 114, width: 48, height: 48).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 208, y: 208, width: 96, height: 96).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 178, y: 370, width: 48, height: 48).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 282, y: 370, width: 48, height: 48).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+ 
+            ctx.cgContext.move(to: CGPoint(x: 256, y: 64))
+            ctx.cgContext.addLine(to: CGPoint(x: 256, y: 448))
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+ 
+            ctx.cgContext.move(to: CGPoint(x: 182, y: 32))
+            ctx.cgContext.addLine(to: CGPoint(x: 150, y: 0))
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+ 
+            ctx.cgContext.move(to: CGPoint(x: 282, y: 32))
+            ctx.cgContext.addLine(to: CGPoint(x: 314, y: 0))
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 182, y: 32, width: 32, height: 32).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.white.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            rectangle = CGRect(x: 282, y: 32, width: 32, height: 32).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.white.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+        }
+        imageView.image = image
+    }
 }
 
