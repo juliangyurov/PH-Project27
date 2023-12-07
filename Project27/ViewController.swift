@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
-        if currentDrawType > 7 {
+        if currentDrawType > 8 {
             currentDrawType = 0
         }
         switch currentDrawType {
@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         case 6:
             drawLadyBug()
         case 7:
+            drawTWIN()
+        case 8:
             drawMoreRotatedSquares()
         default:
             break
@@ -284,6 +286,45 @@ class ViewController: UIViewController {
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
             
+        }
+        imageView.image = image
+    }
+    func drawTWIN() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(7)
+            // T
+            ctx.cgContext.move(to: CGPoint(x: 32, y: 128))
+            ctx.cgContext.addLine(to: CGPoint(x: 128, y: 128))
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            ctx.cgContext.move(to: CGPoint(x: 80, y: 128))
+            ctx.cgContext.addLine(to: CGPoint(x: 80, y: 256))
+            ctx.cgContext.drawPath(using: .fillStroke)
+            // W
+            ctx.cgContext.move(to: CGPoint(x: 144, y: 124))
+            ctx.cgContext.addLine(to: CGPoint(x: 160, y: 242))
+            ctx.cgContext.addLine(to: CGPoint(x: 176, y: 192))
+            ctx.cgContext.addLine(to: CGPoint(x: 192, y: 242))
+            ctx.cgContext.addLine(to: CGPoint(x: 212, y: 124))
+            ctx.cgContext.drawPath(using: .stroke)
+            // I
+            ctx.cgContext.move(to: CGPoint(x: 228, y: 124))
+            ctx.cgContext.addLine(to: CGPoint(x: 228, y: 256))
+            ctx.cgContext.drawPath(using: .stroke)
+            // N
+            ctx.cgContext.move(to: CGPoint(x: 244, y: 124))
+            ctx.cgContext.addLine(to: CGPoint(x: 244, y: 256))
+            ctx.cgContext.move(to: CGPoint(x: 244, y: 124))
+            ctx.cgContext.addLine(to: CGPoint(x: 288, y: 252))
+            ctx.cgContext.move(to: CGPoint(x: 288, y: 124))
+            ctx.cgContext.addLine(to: CGPoint(x: 288, y: 256))
+            ctx.cgContext.drawPath(using: .stroke)
+ 
         }
         imageView.image = image
     }
